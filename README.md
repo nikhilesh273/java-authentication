@@ -1,2 +1,2 @@
-# java-authentication
-developing a Spring Boot Application that makes use of JWT authentication for securing an exposed REST API
+# spring-boot-security-jwt-authentication
+secure rest API using jwt authentication
