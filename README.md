@@ -2,7 +2,7 @@
 A lightweight, reusable Java library for securing REST APIs using JSON Web Token (JWT) authentication with Spring Security. Designed for stateless, token-based authentication in Spring Boot microservices and monolithic applications.
 ## Features
 *  Stateless JWT-based authentication
-*  *Supports Authorization: Bearer <token> header & ?token= query parameter
+*  Supports Authorization: Bearer <token> header & ?token= query parameter
 * Custom user claims embedded in tokens (JwtUserDetails)
 * Role-based access control integration (JWTGrantedAuthority)
 * Configurable token expiration & secret key
@@ -47,11 +47,11 @@ In your main project's pom.xml:
     <version>0.0.1-SNAPSHOT</version>
 </dependency>
 
-Refresh Maven dependencies in your IDE or run:
+## Refresh Maven dependencies in your IDE or run:
 
 mvn clean compile
 
-Set Environment Variable
+## Set Environment Variable
 # Linux / macOS
 export JWT_SECRET="your-super-secret-key-min-32-chars-long!"
 
@@ -64,9 +64,8 @@ $env:JWT_SECRET="your-super-secret-key-min-32-chars-long!"
  Security Note: Use a strong, randomly generated secret (minimum 32 characters for HS512).
 
 
-
- Integration Guide
-1️⃣ Register JWT Filter in Security Config
+# Integration Guide
+###Register JWT Filter in Security Config
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -86,7 +85,7 @@ public class AuthController {
 }
 
 
- Access Authenticated User in Protected Endpoints
+# Access Authenticated User in Protected Endpoints
  @RestController
 @RequestMapping("/api")
 public class ProfileController {
@@ -106,7 +105,7 @@ public class ProfileController {
     }
 }
 
-Testing
+# Testing
 # 1. Login
 curl -X POST http://localhost:8080/api/auth/login \
   -H "Content-Type: application/json" \
@@ -117,7 +116,7 @@ curl -X GET http://localhost:8080/api/me \
   -H "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9..."
 
 
-   Library Structure
+#  Library Structure
    com.jwt_authentication.jwt_authentication/
 ├── constant/
 │   └── JWTConstant.java          # Secret key & claim key constants
